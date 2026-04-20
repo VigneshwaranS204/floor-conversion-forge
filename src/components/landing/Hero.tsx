@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="relative pt-20 md:pt-24 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <img
           src={heroImg}
           alt="Industrial warehouse with seamless epoxy flooring in Chennai"
@@ -18,7 +18,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
-      <div className="container-ucs py-12 md:py-20 lg:py-28">
+      <div className="container-ucs py-12 md:py-20 lg:py-28 relative z-10">
         <div className="grid lg:grid-cols-5 gap-10 items-center">
           {/* Left content */}
           <div className="lg:col-span-3 text-primary-foreground animate-fade-up">
