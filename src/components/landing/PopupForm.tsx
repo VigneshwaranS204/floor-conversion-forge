@@ -35,19 +35,22 @@ const PopupForm = () => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="max-w-md p-0 overflow-hidden border-0">
         <DialogHeader className="sr-only">
-          <DialogTitle>Get Free Flooring Consultation</DialogTitle>
-          <DialogDescription>Request a free callback from our flooring experts.</DialogDescription>
+          <DialogTitle>Get Expert Flooring Recommendation for Your Industry</DialogTitle>
+          <DialogDescription>Speak with our team and get the right flooring solution for your requirement.</DialogDescription>
         </DialogHeader>
         <div className="bg-gradient-primary p-5 text-primary-foreground">
-          <div className="text-xs font-bold uppercase tracking-wider text-accent">Free Offer</div>
-          <h3 className="text-xl font-extrabold mt-1">Get Free Flooring Consultation</h3>
-          <p className="text-sm text-primary-foreground/80 mt-1">Talk to a UCS expert — no obligation.</p>
+          <div className="text-xs font-bold uppercase tracking-wider text-accent">Free Consultation</div>
+          <h3 className="text-xl font-extrabold mt-1">Get Expert Flooring Recommendation for Your Industry</h3>
+          <p className="text-sm text-primary-foreground/80 mt-1">
+            Speak with our team and get the right flooring solution for your requirement.
+          </p>
         </div>
         <div className="p-5">
           <LeadForm
             variant="compact"
-            title="Request Callback"
+            title="Request Free Consultation"
             subtitle="We respond within 30 minutes."
+            ctaLabel="Get Free Consultation"
           />
         </div>
       </DialogContent>

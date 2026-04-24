@@ -10,17 +10,19 @@ const FloatingButtons = () => {
         href={wa}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
-        className="bg-[hsl(142_71%_45%)] text-white h-14 w-14 rounded-full inline-flex items-center justify-center shadow-elegant animate-float-pulse hover:scale-110 transition-base"
+        aria-label="Chat with Expert on WhatsApp"
+        className="group inline-flex items-center gap-2 bg-[hsl(142_71%_45%)] text-white pl-4 pr-5 h-14 rounded-full shadow-elegant animate-float-pulse hover:scale-105 transition-base"
       >
         <MessageCircle className="h-6 w-6" />
+        <span className="font-bold text-sm hidden sm:inline">Chat with Expert</span>
       </a>
       <a
         href={`tel:${phone}`}
-        aria-label="Call UCS now"
-        className="bg-accent text-accent-foreground h-14 w-14 rounded-full inline-flex items-center justify-center shadow-cta hover:scale-110 transition-base"
+        aria-label="Call Now"
+        className="group inline-flex items-center gap-2 bg-accent text-accent-foreground pl-4 pr-5 h-14 rounded-full shadow-cta hover:scale-105 transition-base"
       >
         <Phone className="h-6 w-6" />
+        <span className="font-bold text-sm hidden sm:inline">Call Now</span>
       </a>
     </div>
   );
