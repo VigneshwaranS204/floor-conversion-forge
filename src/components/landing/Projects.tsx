@@ -4,6 +4,9 @@ import warehouse from "@/assets/project-warehouse.jpg";
 import food from "@/assets/project-food.jpg";
 import showroom from "@/assets/project-showroom.jpg";
 import workshop from "@/assets/project-workshop.jpg";
+import pharma from "@/assets/project-pharma.jpg";
+import chemical from "@/assets/project-chemical.jpg";
+import parking from "@/assets/project-parking.jpg";
 
 const projects = [
   { img: beforeafter, label: "Factory Floor Restoration", tag: "Before / After", span: "md:col-span-2 md:row-span-2" },
@@ -12,6 +15,9 @@ const projects = [
   { img: food, label: "Food Processing Facility" },
   { img: showroom, label: "Premium Car Showroom" },
   { img: workshop, label: "Mechanical Workshop" },
+  { img: pharma, label: "Pharma Clean Room" },
+  { img: chemical, label: "Chemical Processing Plant" },
+  { img: parking, label: "Commercial Parking Garage" },
 ];
 
 const Projects = () => {
