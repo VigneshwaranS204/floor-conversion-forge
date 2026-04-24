@@ -19,17 +19,19 @@ const Solutions = () => {
   return (
     <section id="solutions" className="section-padding bg-secondary">
       <div className="container-ucs">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative rounded-2xl overflow-hidden shadow-elegant order-2 lg:order-1">
-            <img
-              src={solutionsBg}
-              alt="Industrial flooring solutions across factories and warehouses in Chennai"
-              loading="lazy"
-              width={1920}
-              height={900}
-              className="w-full h-full object-cover aspect-[4/3]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent" />
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="order-2 lg:order-1 lg:sticky lg:top-24">
+            <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+              <img
+                src={solutionsBg}
+                alt="Industrial flooring solutions across factories and warehouses in Chennai"
+                loading="lazy"
+                width={1920}
+                height={1440}
+                className="w-full h-auto object-cover aspect-[3/4]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent pointer-events-none" />
+            </div>
           </div>
 
           <div className="order-1 lg:order-2">
