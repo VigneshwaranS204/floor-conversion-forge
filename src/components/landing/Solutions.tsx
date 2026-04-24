@@ -1,19 +1,18 @@
-import { CheckCircle2, Factory, Warehouse, Store, FlaskConical, Wrench, Shield, Droplets, Sparkles } from "lucide-react";
+import { CheckCircle2, Factory, Warehouse, FlaskConical, Car, Shield, Droplets, Sparkles } from "lucide-react";
 import solutionsBg from "@/assets/solutions-bg.jpg";
 
 const sectors = [
-  { icon: Factory, label: "Factories & Manufacturing" },
-  { icon: Warehouse, label: "Warehouses & Storage" },
-  { icon: Store, label: "Showrooms & Commercial" },
-  { icon: FlaskConical, label: "Pharma & Food Processing" },
-  { icon: Wrench, label: "Workshops & Service Areas" },
+  { icon: Factory, label: "Manufacturing & Production Units" },
+  { icon: Warehouse, label: "Warehouses & Logistics Hubs" },
+  { icon: FlaskConical, label: "Pharma & Food Processing Plants" },
+  { icon: Car, label: "Automobile & Engineering Facilities" },
 ];
 
 const features = [
-  { icon: Shield, label: "Strong & durable surface" },
-  { icon: Droplets, label: "Chemical & wear resistant" },
-  { icon: Sparkles, label: "Long-lasting performance" },
-  { icon: CheckCircle2, label: "Anti-slip safe finish" },
+  { icon: Shield, label: "Handles heavy machinery & load traffic" },
+  { icon: Droplets, label: "Resistant to chemicals, oil & abrasion" },
+  { icon: Sparkles, label: "Reduces dust & maintenance issues" },
+  { icon: CheckCircle2, label: "Improves workplace safety standards" },
 ];
 
 const Solutions = () => {
@@ -24,7 +23,7 @@ const Solutions = () => {
           <div className="relative rounded-2xl overflow-hidden shadow-elegant order-2 lg:order-1">
             <img
               src={solutionsBg}
-              alt="Industrial and commercial flooring solutions across multiple facilities"
+              alt="Industrial flooring solutions across factories and warehouses in Chennai"
               loading="lazy"
               width={1920}
               height={900}
@@ -36,13 +35,22 @@ const Solutions = () => {
           <div className="order-1 lg:order-2">
             <span className="text-accent font-bold uppercase text-sm tracking-wider">Our Solutions</span>
             <h2 className="heading-lg text-primary mt-2 mb-4">
-              Reliable Flooring for Industrial & Commercial Spaces
+              Industrial Flooring Solutions Built for Performance, Not Just Finish
             </h2>
-            <p className="text-muted-foreground text-lg mb-6">
-              Designed for both heavy-duty industrial use and high-traffic commercial environments.
-            </p>
+            <div className="space-y-3 text-muted-foreground mb-6">
+              <p>
+                With a particular focus on factories, warehouses, and manufacturing facilities, <strong className="text-foreground">Ultimate Construction Solutions (UCS)</strong> is an expert in industrial epoxy flooring solutions in Chennai.
+              </p>
+              <p>
+                Our flooring systems offer strong adhesion, a flawless surface, and high resistance to chemicals, load, and wear — designed for heavy-duty industrial application.
+              </p>
+              <p>
+                Using premium materials and exacting on-site methods, we provide long-lasting, adaptable flooring solutions that meet your industrial needs.
+              </p>
+            </div>
 
-            <div className="space-y-3 mb-8">
+            <h3 className="font-bold text-primary mb-3">Industries We Work With:</h3>
+            <div className="space-y-2.5 mb-6">
               {sectors.map((s) => (
                 <div key={s.label} className="flex items-center gap-3 bg-background rounded-lg p-3 border border-border">
                   <div className="bg-primary/10 text-primary p-2 rounded-md">
@@ -53,10 +61,11 @@ const Solutions = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <h3 className="font-bold text-primary mb-3">Core Performance Benefits:</h3>
+            <div className="grid sm:grid-cols-2 gap-3">
               {features.map((f) => (
-                <div key={f.label} className="flex items-center gap-2">
-                  <f.icon className="h-5 w-5 text-accent flex-shrink-0" />
+                <div key={f.label} className="flex items-start gap-2">
+                  <f.icon className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                   <span className="text-sm font-semibold text-foreground">{f.label}</span>
                 </div>
               ))}

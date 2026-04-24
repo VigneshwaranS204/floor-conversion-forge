@@ -1,4 +1,4 @@
-import { Phone, ShieldCheck, Award, Building2 } from "lucide-react";
+import { Phone, ShieldCheck, Award, Building2, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LeadForm from "./LeadForm";
 import heroImg from "@/assets/hero-warehouse.jpg";
@@ -24,22 +24,22 @@ const Hero = () => {
           <div className="lg:col-span-3 text-primary-foreground animate-fade-up">
             <div className="inline-flex items-center gap-2 bg-accent/15 backdrop-blur border border-accent/30 px-4 py-1.5 rounded-full text-xs md:text-sm font-bold mb-5">
               <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              CHENNAI'S #1 INDUSTRIAL FLOORING CONTRACTOR
+              CHENNAI'S TRUSTED INDUSTRIAL FLOORING APPLICATORS
             </div>
 
             <h1 className="heading-xl mb-4">
-              Industrial Flooring{" "}
-              <span className="text-gradient-accent">Experts</span>{" "}
-              in Chennai
+              Transform Your Industrial Space with{" "}
+              <span className="text-gradient-accent">High-Performance</span>{" "}
+              Epoxy Flooring
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-7 max-w-2xl leading-relaxed">
-              Durable <strong>Epoxy</strong>, <strong>PU</strong> & <strong>Floor Coating</strong> solutions built for factories, warehouses & commercial spaces.
+            <p className="text-lg md:text-xl text-primary-foreground/90 mb-6 max-w-2xl leading-relaxed">
+              Engineered Industrial <strong>Epoxy</strong>, <strong>PU</strong> & <strong>Floor Coating</strong> Solutions for Factories, Warehouses & Manufacturing Units in Chennai.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <Button variant="cta" size="xl" asChild>
-                <a href="#contact">Get Free Site Inspection</a>
+                <a href="#contact">Schedule Free Inspection</a>
               </Button>
               <Button variant="outlineLight" size="xl" asChild>
                 <a href="tel:+919876543210" className="inline-flex items-center gap-2">
@@ -48,12 +48,18 @@ const Hero = () => {
               </Button>
             </div>
 
+            {/* Urgency strip */}
+            <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-bold mb-7 shadow-accent">
+              <AlertTriangle className="h-4 w-4" />
+              Limited Slots Available for Site Inspection This Week
+            </div>
+
             {/* Trust badges */}
             <div className="grid grid-cols-3 gap-3 max-w-xl">
               {[
-                { icon: Award, label: "10+ Years", sub: "Experience" },
-                { icon: Building2, label: "100+", sub: "Projects" },
-                { icon: ShieldCheck, label: "Industrial", sub: "Specialists" },
+                { icon: Award, label: "20+ Years", sub: "Experience" },
+                { icon: Building2, label: "5000+", sub: "Projects" },
+                { icon: ShieldCheck, label: "Trusted", sub: "Applicators" },
               ].map((b) => (
                 <div
                   key={b.label}

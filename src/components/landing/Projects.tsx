@@ -20,9 +20,9 @@ const Projects = () => {
       <div className="container-ucs">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-accent font-bold uppercase text-sm tracking-wider">Our Work</span>
-          <h2 className="heading-lg text-primary mt-2 mb-3">Project Showcase</h2>
+          <h2 className="heading-lg text-primary mt-2 mb-3">Executed Across Industrial Environments</h2>
           <p className="text-muted-foreground text-lg">
-            100+ industrial spaces transformed across Chennai. Real results, real projects.
+            From factory floors to warehouse surfaces, UCS has delivered reliable and long-lasting flooring systems across Chennai.
           </p>
         </div>
 

@@ -2,24 +2,20 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    q: "What is the cost of epoxy flooring in Chennai?",
-    a: "Industrial epoxy flooring in Chennai typically ranges from ₹65 – ₹250 per sq.ft depending on the system (self-leveling, broadcast, mortar), thickness, and surface condition. UCS provides a free site inspection and a transparent quote — no hidden costs.",
+    q: "What factors affect epoxy flooring cost?",
+    a: "Area size, thickness, condition of surface, and type of usage are the key factors that determine the final cost of epoxy flooring.",
   },
   {
-    q: "How long does an epoxy or PU floor last?",
-    a: "A properly installed epoxy floor lasts 8–15 years and PU systems can last 10–20 years even in heavy industrial environments, when surface preparation and application are done correctly — which is exactly where UCS specializes.",
+    q: "Is epoxy suitable for heavy industrial use?",
+    a: "Yes, epoxy flooring is designed for heavy-duty industrial environments and can withstand high loads, machinery movement, and chemical exposure.",
   },
   {
-    q: "Which is better — Epoxy or PU flooring?",
-    a: "Epoxy is harder, more chemical resistant and great for warehouses & manufacturing units. PU is more flexible, UV stable and better suited for food, pharma, cold storage and areas with thermal shock. We help you choose the right system for your facility.",
+    q: "When should I choose PU over epoxy?",
+    a: "PU is recommended for temperature-sensitive industries like food and pharma, where thermal shock resistance and flexibility are critical.",
   },
   {
     q: "How long does installation take?",
-    a: "Most projects take 3–7 days depending on area, system type, and curing time. We plan around your operations to minimize downtime and can also work in shifts or weekends.",
-  },
-  {
-    q: "Do you serve all areas in Chennai?",
-    a: "Yes — UCS serves the entire Chennai region including Ambattur, Sriperumbudur, Oragadam, Maraimalai Nagar, Guindy, OMR, ECR and surrounding industrial zones in Tamil Nadu.",
+    a: "Typically between 2–5 days depending on project size, system type, and curing requirements.",
   },
 ];
 

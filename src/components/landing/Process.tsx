@@ -1,11 +1,11 @@
 import { Search, Hammer, Paintbrush, ClipboardCheck, KeyRound } from "lucide-react";
 
 const steps = [
-  { icon: Search, title: "Site Inspection", desc: "Free on-site assessment & flooring recommendation." },
-  { icon: Hammer, title: "Surface Preparation", desc: "Diamond grinding & priming for perfect adhesion." },
-  { icon: Paintbrush, title: "Application", desc: "Expert layered application of epoxy/PU systems." },
-  { icon: ClipboardCheck, title: "Quality Check", desc: "Strict QC for finish, thickness & durability." },
-  { icon: KeyRound, title: "Handover", desc: "On-time project handover with care guidelines." },
+  { icon: Search, title: "Site Evaluation", desc: "Site evaluation & requirement analysis at your facility." },
+  { icon: Hammer, title: "Surface Preparation", desc: "Surface preparation & treatment for perfect adhesion." },
+  { icon: Paintbrush, title: "Application", desc: "Expert flooring system application by trained applicators." },
+  { icon: ClipboardCheck, title: "Quality Inspection", desc: "Quality inspection & testing for finish and durability." },
+  { icon: KeyRound, title: "Final Handover", desc: "Final delivery & handover with care guidelines." },
 ];
 
 const Process = () => {
@@ -14,7 +14,7 @@ const Process = () => {
       <div className="container-ucs">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-accent font-bold uppercase text-sm tracking-wider">How We Work</span>
-          <h2 className="heading-lg text-primary mt-2 mb-3">Our 5-Step Proven Process</h2>
+          <h2 className="heading-lg text-primary mt-2 mb-3">Our Proven Application Process</h2>
         </div>
 
         <div className="relative">
@@ -23,7 +23,7 @@ const Process = () => {
             {steps.map((s, i) => (
               <div key={s.title} className="text-center relative">
                 <div className="relative inline-flex">
-                  <div className="bg-gradient-primary text-primary-foreground h-18 w-18 md:h-20 md:w-20 rounded-full inline-flex items-center justify-center shadow-elegant relative z-10" style={{ height: '5rem', width: '5rem' }}>
+                  <div className="bg-gradient-primary text-primary-foreground rounded-full inline-flex items-center justify-center shadow-elegant relative z-10" style={{ height: '5rem', width: '5rem' }}>
                     <s.icon className="h-8 w-8" />
                   </div>
                   <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground h-7 w-7 rounded-full text-xs font-extrabold inline-flex items-center justify-center z-20 shadow-accent">
