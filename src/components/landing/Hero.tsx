@@ -94,7 +94,6 @@ const Hero = () => {
             height={1080}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
       <div className="container-ucs py-10 md:py-16 lg:py-20 relative z-10">
