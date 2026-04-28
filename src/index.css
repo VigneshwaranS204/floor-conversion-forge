@@ -2,68 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* UCS - Ultimate Construction Solutions Design System
-   Industrial • Bold • Trustworthy
+/* UCS — Ultimate Construction Solutions
+   Premium B2B Industrial • Clean • Light
    All colors HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    /* Soft White background #F5F7FA */
+    --background: 214 33% 97%;
+    --foreground: 217 33% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 217 33% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 217 33% 17%;
 
-    /* Deep Industrial Blue */
-    --primary: 224 76% 33%;
+    /* Navy Blue #1F3A5F */
+    --primary: 214 51% 25%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 224 80% 22%;
-    --primary-glow: 217 91% 55%;
+    --primary-dark: 214 60% 17%;
+    --primary-glow: 214 51% 40%;
 
     /* Light grey secondary */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 224 76% 33%;
+    --secondary: 214 20% 94%;
+    --secondary-foreground: 214 51% 25%;
 
-    --muted: 210 16% 93%;
-    --muted-foreground: 215 16% 40%;
+    --muted: 214 16% 93%;
+    --muted-foreground: 215 14% 40%;
 
-    /* Accent: Construction Orange */
-    --accent: 24 95% 53%;
+    /* Accent: Orange #F97316 */
+    --accent: 21 90% 53%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 36 100% 55%;
+    --accent-glow: 25 95% 58%;
+
+    /* Steel grey */
+    --steel: 220 9% 46%;
 
     --destructive: 0 84% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 71% 45%;
+    --success: 142 71% 42%;
     --success-foreground: 0 0% 100%;
 
-    --border: 214 25% 88%;
-    --input: 214 25% 88%;
-    --ring: 224 76% 33%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 214 51% 25%;
 
-    --radius: 0.625rem;
+    --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(224 80% 22%), hsl(224 76% 33%));
-    --gradient-accent: linear-gradient(135deg, hsl(24 95% 53%), hsl(36 100% 55%));
-    --gradient-hero: linear-gradient(135deg, hsl(224 80% 18% / 0.92), hsl(224 76% 28% / 0.85));
-    --gradient-overlay: linear-gradient(180deg, hsl(224 80% 12% / 0.4), hsl(224 80% 12% / 0.85));
+    /* Gradients — used sparingly, hero & CTA only */
+    --gradient-primary: linear-gradient(135deg, hsl(214 60% 17%), hsl(214 51% 28%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 60% 15% / 0.88), hsl(214 51% 25% / 0.78));
 
-    /* Shadows */
-    --shadow-sm: 0 2px 8px -2px hsl(224 80% 22% / 0.08);
-    --shadow-md: 0 8px 24px -8px hsl(224 80% 22% / 0.18);
-    --shadow-lg: 0 20px 50px -12px hsl(224 80% 22% / 0.28);
-    --shadow-accent: 0 10px 30px -8px hsl(24 95% 53% / 0.5);
-    --shadow-cta: 0 14px 40px -10px hsl(24 95% 53% / 0.55);
+    /* Shadows — soft, premium */
+    --shadow-sm: 0 2px 8px -2px hsl(214 40% 20% / 0.06);
+    --shadow-md: 0 6px 20px -6px hsl(214 40% 20% / 0.12);
+    --shadow-lg: 0 16px 40px -12px hsl(214 40% 20% / 0.18);
+    --shadow-cta: 0 10px 28px -6px hsl(21 90% 53% / 0.45);
+    --shadow-card: 0 4px 16px -4px hsl(214 40% 20% / 0.08);
 
-    /* Transitions */
-    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -77,13 +77,9 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     @apply bg-background text-foreground antialiased;
@@ -92,8 +88,11 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', system-ui, sans-serif;
-    @apply font-bold tracking-tight;
+    @apply font-extrabold tracking-tight;
+    line-height: 1.15;
   }
+
+  p { line-height: 1.65; }
 }
 
 @layer components {
@@ -101,24 +100,29 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Generous section spacing: 50px mobile, 80px desktop */
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-[50px] md:py-20 lg:py-24;
   }
 
   .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight;
+    @apply text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight;
   }
 
   .heading-lg {
-    @apply text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight;
+    @apply text-[1.75rem] sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold leading-tight tracking-tight;
   }
 
   .heading-md {
-    @apply text-2xl md:text-3xl font-bold leading-tight;
+    @apply text-xl md:text-2xl font-bold leading-tight;
+  }
+
+  .eyebrow {
+    @apply text-accent font-bold uppercase text-xs tracking-[0.15em];
   }
 
   .text-gradient-accent {
-    background: var(--gradient-accent);
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -127,15 +131,17 @@
 
 @layer utilities {
   .bg-gradient-primary { background: var(--gradient-primary); }
-  .bg-gradient-accent { background: var(--gradient-accent); }
   .bg-gradient-hero { background: var(--gradient-hero); }
-  .bg-gradient-overlay { background: var(--gradient-overlay); }
 
   .shadow-cta { box-shadow: var(--shadow-cta); }
-  .shadow-accent { box-shadow: var(--shadow-accent); }
+  .shadow-card { box-shadow: var(--shadow-card); }
   .shadow-elegant { box-shadow: var(--shadow-lg); }
 
   .transition-base { transition: var(--transition-base); }
+
+  /* Safe area for mobile bottom bar */
+  .pb-mobile-bar { padding-bottom: 76px; }
+  @media (min-width: 900px) { .pb-mobile-bar { padding-bottom: 0; } }
 
   @keyframes float-pulse {
     0%, 100% { transform: scale(1); box-shadow: 0 8px 25px -5px hsl(142 71% 45% / 0.4); }
@@ -144,14 +150,14 @@
   .animate-float-pulse { animation: float-pulse 2.4s ease-in-out infinite; }
 
   @keyframes fade-up {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  .animate-fade-up { animation: fade-up 0.6s ease-out both; }
+  .animate-fade-up { animation: fade-up 0.5s ease-out both; }
 
-  @keyframes slide-in {
-    from { opacity: 0; transform: translateX(30px); }
+  @keyframes fade-slide {
+    from { opacity: 0; transform: translateX(20px); }
     to { opacity: 1; transform: translateX(0); }
   }
-  .animate-slide-in { animation: slide-in 0.5s ease-out both; }
+  .animate-fade-slide { animation: fade-slide 0.5s ease-out both; }
 }

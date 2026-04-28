@@ -1,6 +1,5 @@
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "@/assets/ucs-logo.png";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -13,50 +12,38 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = [
-    { href: "#solutions", label: "Solutions" },
-    { href: "#services", label: "Services" },
-    { href: "#projects", label: "Projects" },
-    { href: "#process", label: "Process" },
-    { href: "#faq", label: "FAQ" },
-  ];
-
   return (
     <header
       className={`fixed top-0 inset-x-0 z-40 transition-base ${
-        scrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-background/80 backdrop-blur-sm"
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white/85 backdrop-blur-sm"
       }`}
     >
       <div className="container-ucs flex h-16 md:h-20 items-center justify-between">
-        <a href="#" className="flex items-center gap-2" aria-label="UCS Home">
-          <img src={logo} alt="Ultimate Construction Solutions UCS logo" className="h-10 md:h-12 w-auto" />
+        <a href="#" className="flex items-center gap-2" aria-label="UCS Flooring Home">
+          <div className="flex flex-col leading-tight">
+            <span className="text-lg md:text-xl font-extrabold text-primary tracking-tight">UCS FLOORING</span>
+            <span className="text-[10px] md:text-xs text-muted-foreground font-semibold uppercase tracking-wider">Industrial Epoxy & PU</span>
+          </div>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-semibold text-foreground/80 hover:text-primary transition-base"
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 md:gap-3">
           <a
-            href="tel:+919876543210"
-            className="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-primary"
+            href="tel:+919710403526"
+            className="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-accent transition-base"
           >
             <Phone className="h-4 w-4" />
-            +91 98765 43210
+            +91 97104 03526
           </a>
+          <Button variant="whatsapp" size="sm" asChild className="hidden md:inline-flex">
+            <a href="https://wa.me/919710403526" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-4 w-4" /> WhatsApp
+            </a>
+          </Button>
           <Button variant="cta" size="sm" asChild className="hidden md:inline-flex">
-            <a href="#contact">Free Inspection</a>
+            <a href="#contact">Get Free Quote</a>
           </Button>
           <button
-            className="lg:hidden p-2 text-primary"
+            className="md:hidden p-2 text-primary"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -66,20 +53,18 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t bg-background">
+        <div className="md:hidden border-t bg-white shadow-lg">
           <nav className="container-ucs py-4 flex flex-col gap-3">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="text-base font-semibold text-foreground py-2"
-              >
-                {l.label}
+            <a href="tel:+919710403526" className="inline-flex items-center gap-2 text-base font-bold text-primary py-2">
+              <Phone className="h-4 w-4" /> +91 97104 03526
+            </a>
+            <Button variant="whatsapp" asChild>
+              <a href="https://wa.me/919710403526" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+                <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
-            ))}
+            </Button>
             <Button variant="cta" asChild>
-              <a href="#contact" onClick={() => setOpen(false)}>Get Free Inspection</a>
+              <a href="#contact" onClick={() => setOpen(false)}>Get Free Quote</a>
             </Button>
           </nav>
         </div>

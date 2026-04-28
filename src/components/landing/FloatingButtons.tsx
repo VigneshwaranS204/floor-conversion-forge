@@ -1,30 +1,42 @@
 import { MessageCircle, Phone } from "lucide-react";
 
-const FloatingButtons = () => {
-  const phone = "+919876543210";
-  const wa = "https://wa.me/919876543210?text=Hi%20UCS%2C%20I%20need%20a%20quote%20for%20industrial%20flooring.";
+const WA_URL = "https://wa.me/919710403526?text=Hi%20UCS%2C%20I%20need%20a%20quote%20for%20industrial%20flooring.";
+const PHONE = "+919710403526";
 
+const FloatingButtons = () => {
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-3">
+    <>
+      {/* Desktop / tablet: floating WhatsApp bottom-right */}
       <a
-        href={wa}
+        href={WA_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Expert on WhatsApp"
-        className="group inline-flex items-center gap-2 bg-[hsl(142_71%_45%)] text-white pl-4 pr-5 h-14 rounded-full shadow-elegant animate-float-pulse hover:scale-105 transition-base"
+        aria-label="Chat on WhatsApp"
+        className="hidden md:inline-flex fixed bottom-6 right-6 z-40 items-center justify-center h-14 w-14 rounded-full bg-[hsl(142_71%_42%)] text-white shadow-elegant animate-float-pulse hover:scale-110 transition-base"
       >
-        <MessageCircle className="h-6 w-6" />
-        <span className="font-bold text-sm hidden sm:inline">Chat with Expert</span>
+        <MessageCircle className="h-7 w-7" />
       </a>
-      <a
-        href={`tel:${phone}`}
-        aria-label="Call Now"
-        className="group inline-flex items-center gap-2 bg-accent text-accent-foreground pl-4 pr-5 h-14 rounded-full shadow-cta hover:scale-105 transition-base"
-      >
-        <Phone className="h-6 w-6" />
-        <span className="font-bold text-sm hidden sm:inline">Call Now</span>
-      </a>
-    </div>
+
+      {/* Mobile bottom bar — screens below 900px */}
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.08)] grid grid-cols-2">
+        <a
+          href={`tel:${PHONE}`}
+          aria-label="Call Now"
+          className="flex items-center justify-center gap-2 h-14 bg-primary text-white font-bold text-sm active:bg-primary-dark"
+        >
+          <Phone className="h-5 w-5" /> Call Now
+        </a>
+        <a
+          href={WA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          className="flex items-center justify-center gap-2 h-14 bg-[hsl(142_71%_42%)] text-white font-bold text-sm active:bg-[hsl(142_71%_36%)]"
+        >
+          <MessageCircle className="h-5 w-5" /> WhatsApp
+        </a>
+      </div>
+    </>
   );
 };
 
