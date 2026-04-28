@@ -94,6 +94,8 @@ const Hero = () => {
             height={1080}
           />
         ))}
+        {/* Subtle left-side scrim for text legibility, image stays visible on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/85 via-primary-dark/60 to-primary-dark/20 lg:via-primary-dark/40 lg:to-transparent" />
       </div>
 
       <div className="container-ucs py-10 md:py-16 lg:py-20 relative z-10">
@@ -106,9 +108,9 @@ const Hero = () => {
                 {active.eyebrow}
               </div>
 
-              <h1 className="heading-xl mb-4">{active.headline}</h1>
+              <h1 className="heading-xl mb-4 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">{active.headline}</h1>
 
-              <p className="text-base md:text-lg text-white/90 mb-6 max-w-2xl leading-relaxed">
+              <p className="text-base md:text-lg text-white mb-6 max-w-2xl leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]">
                 {active.sub}
               </p>
 
@@ -117,10 +119,10 @@ const Hero = () => {
                 {active.stats.map((st) => (
                   <div
                     key={st.label}
-                    className="bg-white/10 backdrop-blur border border-white/15 rounded-xl p-3 md:p-4 text-center"
+                    className="bg-primary-dark/70 backdrop-blur-md border border-white/20 rounded-xl p-3 md:p-4 text-center"
                   >
                     <div className="font-extrabold text-lg md:text-2xl text-accent">{st.value}</div>
-                    <div className="text-[10px] md:text-xs font-semibold text-white/80 uppercase tracking-wide mt-1">
+                    <div className="text-[10px] md:text-xs font-semibold text-white uppercase tracking-wide mt-1">
                       {st.label}
                     </div>
                   </div>
