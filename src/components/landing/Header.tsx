@@ -1,6 +1,7 @@
 import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import ucsLogo from "@/assets/ucs-logo.png";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -19,11 +20,8 @@ const Header = () => {
       }`}
     >
       <div className="container-ucs flex h-16 md:h-20 items-center justify-between">
-        <a href="#" className="flex items-center gap-2" aria-label="UCS Flooring Home">
-          <div className="flex flex-col leading-tight">
-            <span className="text-lg md:text-xl font-extrabold text-primary tracking-tight">UCS FLOORING</span>
-            <span className="text-[10px] md:text-xs text-muted-foreground font-semibold uppercase tracking-wider">Industrial Epoxy & PU</span>
-          </div>
+        <a href="#" className="flex items-center gap-2" aria-label="Ultimate Construction Solution Home">
+          <img src={ucsLogo} alt="Ultimate Construction Solution" className="h-10 md:h-14 w-auto object-contain" />
         </a>
 
         <div className="flex items-center gap-2 md:gap-3">
