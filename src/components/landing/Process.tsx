@@ -1,40 +1,43 @@
-import { Search, Hammer, Paintbrush, ClipboardCheck, KeyRound } from "lucide-react";
-
 const steps = [
-  { icon: Search, title: "Site Evaluation", desc: "Site evaluation & requirement analysis at your facility." },
-  { icon: Hammer, title: "Surface Preparation", desc: "Surface preparation & treatment for perfect adhesion." },
-  { icon: Paintbrush, title: "Application", desc: "Expert flooring system application by trained applicators." },
-  { icon: ClipboardCheck, title: "Quality Inspection", desc: "Quality inspection & testing for finish and durability." },
-  { icon: KeyRound, title: "Final Handover", desc: "Final delivery & handover with care guidelines." },
+  { n: "01", title: "Site Assessment", desc: "Free moisture, hardness & structural survey of existing slab" },
+  { n: "02", title: "System Selection", desc: "We specify the right product, thickness & system for your use case" },
+  { n: "03", title: "Surface Prep", desc: "Shot blasting, diamond grinding & crack repair — the critical step most skip" },
+  { n: "04", title: "Primer Coat", desc: "Penetrating primer seals porosity and locks in adhesion" },
+  { n: "05", title: "System Application", desc: "Precision mixing, controlled pour, squeegee & roller finish" },
+  { n: "06", title: "QC & Handover", desc: "Pull-off adhesion test, DFT check, final walkthrough & warranty issue" },
 ];
 
 const Process = () => {
   return (
-    <section id="process" className="section-padding bg-background">
+    <section id="process" className="section-padding bg-secondary">
       <div className="container-ucs">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-accent font-bold uppercase text-sm tracking-wider">How We Work</span>
-          <h2 className="heading-lg text-primary mt-2 mb-3">Our Proven Application Process</h2>
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
+          <span className="eyebrow">Our Application Process</span>
+          <h2 className="heading-lg text-primary mt-3 mb-4">
+            6 Steps. Zero Surprises.
+          </h2>
+          <p className="text-muted-foreground text-base md:text-lg">
+            Every project follows the same documented process — no shortcuts, no skipped steps.
+          </p>
         </div>
 
-        <div className="relative">
-          <div className="hidden lg:block absolute top-9 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-30" />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {steps.map((s, i) => (
-              <div key={s.title} className="text-center relative">
-                <div className="relative inline-flex">
-                  <div className="bg-gradient-primary text-primary-foreground rounded-full inline-flex items-center justify-center shadow-elegant relative z-10" style={{ height: '5rem', width: '5rem' }}>
-                    <s.icon className="h-8 w-8" />
-                  </div>
-                  <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground h-7 w-7 rounded-full text-xs font-extrabold inline-flex items-center justify-center z-20 shadow-accent">
-                    {i + 1}
-                  </span>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {steps.map((s) => (
+            <div
+              key={s.n}
+              className="bg-card rounded-2xl border border-border p-6 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-base"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-4xl md:text-5xl font-extrabold text-accent/30 leading-none">
+                  {s.n}
                 </div>
-                <h3 className="font-bold text-primary mt-4 mb-1">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">{s.desc}</p>
+                <div>
+                  <h3 className="font-extrabold text-primary text-lg mb-1.5">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

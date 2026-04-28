@@ -18,7 +18,7 @@ const PopupForm = () => {
       sessionStorage.setItem(STORAGE_KEY, "1");
     };
 
-    const timer = window.setTimeout(trigger, 5000);
+    const timer = window.setTimeout(trigger, 8000);
 
     const onMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0) trigger();
@@ -38,14 +38,16 @@ const PopupForm = () => {
           <DialogTitle>Get Expert Flooring Recommendation for Your Industry</DialogTitle>
           <DialogDescription>Speak with our team and get the right flooring solution for your requirement.</DialogDescription>
         </DialogHeader>
-        <div className="bg-gradient-primary p-5 text-primary-foreground">
-          <div className="text-xs font-bold uppercase tracking-wider text-accent">Free Consultation</div>
-          <h3 className="text-xl font-extrabold mt-1">Get Expert Flooring Recommendation for Your Industry</h3>
-          <p className="text-sm text-primary-foreground/80 mt-1">
+        <div className="bg-gradient-primary p-5 md:p-6 text-white pr-14">
+          <div className="text-xs font-bold uppercase tracking-wider text-accent mb-1">Free Consultation</div>
+          <h3 className="text-lg md:text-xl font-extrabold leading-tight">
+            Get Expert Flooring Recommendation for Your Industry
+          </h3>
+          <p className="text-sm text-white/80 mt-2">
             Speak with our team and get the right flooring solution for your requirement.
           </p>
         </div>
-        <div className="p-5">
+        <div className="p-5 md:p-6">
           <LeadForm
             variant="compact"
             title="Request Free Consultation"

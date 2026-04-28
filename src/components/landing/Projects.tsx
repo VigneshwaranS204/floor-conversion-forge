@@ -1,59 +1,57 @@
-import beforeafter from "@/assets/project-beforeafter.jpg";
 import factory from "@/assets/project-factory.jpg";
-import warehouse from "@/assets/project-warehouse.jpg";
-import food from "@/assets/project-food.jpg";
-import showroom from "@/assets/project-showroom.jpg";
-import workshop from "@/assets/project-workshop.jpg";
 import pharma from "@/assets/project-pharma.jpg";
+import food from "@/assets/project-food.jpg";
+import warehouse from "@/assets/project-warehouse.jpg";
+import workshop from "@/assets/project-workshop.jpg";
 import chemical from "@/assets/project-chemical.jpg";
-import parking from "@/assets/project-parking.jpg";
 
 const projects = [
-  { img: beforeafter, label: "Factory Floor Restoration", tag: "Before / After", span: "md:col-span-2 md:row-span-2" },
-  { img: factory, label: "Automotive Manufacturing Plant" },
-  { img: warehouse, label: "Logistics Warehouse" },
-  { img: food, label: "Food Processing Facility" },
-  { img: showroom, label: "Premium Car Showroom" },
-  { img: workshop, label: "Mechanical Workshop" },
-  { img: pharma, label: "Pharma Clean Room" },
-  { img: chemical, label: "Chemical Processing Plant" },
-  { img: parking, label: "Commercial Parking Garage" },
+  { img: factory, tag: "EPOXY FLOORING", title: "Automotive Manufacturing Plant", meta: "Chennai, Tamil Nadu · 28,000 sq ft" },
+  { img: pharma, tag: "PU FLOORING — GMP", title: "Pharmaceutical Clean Room", meta: "Chennai, Tamil Nadu · 12,000 sq ft" },
+  { img: food, tag: "PU MORTAR — FSSAI", title: "Food Processing Facility", meta: "Chennai, Tamil Nadu · 8,500 sq ft" },
+  { img: warehouse, tag: "EPOXY + LINE MARKING", title: "Logistics & Warehouse Hub", meta: "Chennai, Tamil Nadu · 45,000 sq ft" },
+  { img: workshop, tag: "ESD EPOXY FLOORING", title: "Electronics Manufacturing Unit", meta: "Chennai, Tamil Nadu · 6,200 sq ft" },
+  { img: chemical, tag: "PU FLOORING — THERMAL", title: "Cold Storage Facility", meta: "Chennai, Tamil Nadu · 15,000 sq ft" },
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="section-padding bg-secondary">
+    <section id="projects" className="section-padding bg-background">
       <div className="container-ucs">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-accent font-bold uppercase text-sm tracking-wider">Our Work</span>
-          <h2 className="heading-lg text-primary mt-2 mb-3">Executed Across Industrial Environments</h2>
-          <p className="text-muted-foreground text-lg">
-            From factory floors to warehouse surfaces, UCS has delivered reliable and long-lasting flooring systems across Chennai.
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
+          <span className="eyebrow">Executed Across Industrial Environments</span>
+          <h2 className="heading-lg text-primary mt-3 mb-4">
+            From Factory Floors to Pharma Clean Rooms
+          </h2>
+          <p className="text-muted-foreground text-base md:text-lg">
+            Real projects. Real industries. Real Chennai facilities.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[160px] md:auto-rows-[200px]">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {projects.map((p) => (
             <div
-              key={p.label}
-              className={`group relative rounded-xl overflow-hidden shadow-md hover:shadow-elegant transition-base ${p.span ?? ""}`}
+              key={p.title}
+              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elegant border border-border transition-base hover:-translate-y-1"
             >
-              <img
-                src={p.img}
-                alt={p.label}
-                loading="lazy"
-                width={1024}
-                height={768}
-                className="h-full w-full object-cover group-hover:scale-105 transition-base duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/20 to-transparent opacity-90 group-hover:opacity-100" />
-              {p.tag && (
-                <span className="absolute top-3 left-3 bg-accent text-accent-foreground text-xs font-bold px-2.5 py-1 rounded-full">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="h-full w-full object-cover group-hover:scale-105 transition-base duration-500"
+                />
+                <span className="absolute top-3 left-3 bg-accent text-accent-foreground text-[10px] md:text-xs font-extrabold px-2.5 py-1.5 rounded-full shadow-md uppercase tracking-wider">
                   {p.tag}
                 </span>
-              )}
-              <div className="absolute bottom-0 inset-x-0 p-4 text-primary-foreground">
-                <h3 className="font-bold text-base md:text-lg leading-tight">{p.label}</h3>
+              </div>
+              <div className="p-5">
+                <h3 className="font-extrabold text-primary text-base md:text-lg mb-1 leading-tight">
+                  {p.title}
+                </h3>
+                <p className="text-xs md:text-sm text-muted-foreground">{p.meta}</p>
               </div>
             </div>
           ))}
