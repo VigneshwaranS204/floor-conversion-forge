@@ -35,7 +35,7 @@ const LeadForm = ({
   variant = "card",
   title = "Secure Your Slot for an Epoxy Flooring Consultation",
   subtitle = "Our expert will visit your site and share a no-obligation quote.",
-  ctaLabel = "Schedule Free Inspection",
+  ctaLabel = "Book Free Site Assessment →",
 }: LeadFormProps) => {
   const { toast } = useToast();
   const {
