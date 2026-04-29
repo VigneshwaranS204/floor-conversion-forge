@@ -53,12 +53,26 @@ const LeadForm = ({
   const service = watch("service");
 
   const onSubmit = async (values: LeadValues) => {
-    await new Promise((r) => setTimeout(r, 700));
-    toast({
-      title: "Request received ✅",
-      description: `Thanks ${values.name}! Our team will call you within 30 minutes.`,
-    });
-    reset();
+    try {
+      const res = await fetch("/mail.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...values, source: title }),
+      });
+      const json = await res.json().catch(() => ({ success: res.ok }));
+      if (!res.ok || !json.success) throw new Error(json.error || "Failed");
+      toast({
+        title: "Request received ✅",
+        description: `Thanks ${values.name}! Our team will call you within 30 minutes.`,
+      });
+      reset();
+    } catch (err: any) {
+      toast({
+        title: "Could not submit",
+        description: err?.message || "Please call +91 97104 03526 directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const isCompact = variant === "compact";
