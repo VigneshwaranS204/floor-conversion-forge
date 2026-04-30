@@ -54,7 +54,7 @@ const LeadForm = ({
 
   const onSubmit = async (values: LeadValues) => {
     try {
-      const res = await fetch("https://epoxyflooring.digitalvicky.com/mail.php", {
+      const res = await fetch("/mail.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...values, source: title }),
