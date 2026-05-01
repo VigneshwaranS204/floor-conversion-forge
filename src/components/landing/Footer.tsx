@@ -11,7 +11,7 @@ const Footer = () => {
           Industrial Epoxy & PU Flooring · Chennai, Tamil Nadu · Est. 2003
         </p>
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Plot+No.116,+14th+Street,+Kuberan+Nagar+Extension,+Madipakkam,+Chennai+600091"
+          href="https://www.google.com/maps/place/Plot+No.+125/@12.9550675,80.2061481,17z/data=!3m1!4b1!4m6!3m5!1s0x3a525d003cfe9aa3:0xe4c612d029e403c3!8m2!3d12.9550675!4d80.2061481!16s%2Fg%2F11mrbvcypm"
           target="_blank"
           rel="noopener noreferrer"
           className="block not-italic text-sm text-white/80 hover:text-white hover:underline leading-relaxed transition-colors"
