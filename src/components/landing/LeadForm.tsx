@@ -98,7 +98,7 @@ const LeadForm = ({
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3.5" noValidate>
         <div>
-          <Label htmlFor="name" className="text-sm font-semibold">Full Name</Label>
+          <Label htmlFor="name" className="text-sm font-semibold">Full Name <span className="text-destructive">*</span></Label>
           <Input id="name" placeholder="Your full name" {...register("name")} maxLength={80} />
           {errors.name && <p className="text-xs text-destructive mt-1">{errors.name.message}</p>}
         </div>
@@ -117,13 +117,13 @@ const LeadForm = ({
         )}
 
         <div>
-          <Label htmlFor="phone" className="text-sm font-semibold">Phone Number *</Label>
+          <Label htmlFor="phone" className="text-sm font-semibold">Phone Number <span className="text-destructive">*</span></Label>
           <Input id="phone" inputMode="tel" placeholder="+91 98765 43210" {...register("phone")} maxLength={15} />
           {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone.message}</p>}
         </div>
 
         <div>
-          <Label htmlFor="service" className="text-sm font-semibold">Service Required</Label>
+          <Label htmlFor="service" className="text-sm font-semibold">Service Required <span className="text-destructive">*</span></Label>
           <Select value={service} onValueChange={(v) => setValue("service", v, { shouldValidate: true })}>
             <SelectTrigger id="service">
               <SelectValue placeholder="Select a service" />
