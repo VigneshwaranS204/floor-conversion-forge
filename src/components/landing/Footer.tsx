@@ -10,6 +10,11 @@ const Footer = () => {
         <p className="text-sm text-white/70">
           Industrial Epoxy & PU Flooring · Chennai, Tamil Nadu · Est. 2003
         </p>
+        <address className="not-italic text-sm text-white/80 leading-relaxed">
+          Plot No.116, 14th Street,<br />
+          Kuberan Nagar Extension,<br />
+          Madipakkam, Chennai - 600091
+        </address>
         <p className="text-xs text-white/50">
           © {new Date().getFullYear()} UCS Flooring. All rights reserved. · Privacy Policy
         </p>
