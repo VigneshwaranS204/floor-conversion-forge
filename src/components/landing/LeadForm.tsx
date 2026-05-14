@@ -48,7 +48,7 @@ const LeadForm = ({
     formState: { errors, isSubmitting },
   } = useForm<LeadValues>({
     resolver: zodResolver(schema),
-    defaultValues: { name: "", company: "", city: "", phone: "", service: "", area: "", message: "" },
+    defaultValues: { name: "", company: "", city: "", phone: "", service: "", area: undefined, message: "" },
   });
 
   const service = watch("service");
