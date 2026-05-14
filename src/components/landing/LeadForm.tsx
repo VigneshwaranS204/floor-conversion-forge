@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { CheckCircle2 } from "lucide-react";
 
@@ -18,7 +19,7 @@ const schema = z.object({
     .trim()
     .regex(/^[0-9+\-\s()]{10,15}$/, "Enter a valid phone number"),
   service: z.string().min(1, "Select a service"),
-  area: z.string().trim().max(20).optional(),
+  area: z.enum(["<1000", "1000-10000", "10000-20000", ">20000"]).optional(),
   message: z.string().trim().max(500).optional(),
 });
 
@@ -47,10 +48,11 @@ const LeadForm = ({
     formState: { errors, isSubmitting },
   } = useForm<LeadValues>({
     resolver: zodResolver(schema),
-    defaultValues: { name: "", company: "", city: "", phone: "", service: "", area: "", message: "" },
+    defaultValues: { name: "", company: "", city: "", phone: "", service: "", area: undefined, message: "" },
   });
 
   const service = watch("service");
+  const area = watch("area");
 
   const onSubmit = async (values: LeadValues) => {
     try {
@@ -141,8 +143,24 @@ const LeadForm = ({
         {!isCompact && (
           <>
             <div>
-              <Label htmlFor="area" className="text-sm font-semibold">Area Size (sq.ft)</Label>
-              <Input id="area" inputMode="numeric" placeholder="e.g. 5000" {...register("area")} maxLength={20} />
+              <Label className="text-sm font-semibold">Area (In Square Feet)<span className="text-destructive">*</span></Label>
+              <RadioGroup
+                value={area}
+                onValueChange={(v) => setValue("area", v as any, { shouldValidate: true })}
+                className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2"
+              >
+                {[
+                  { v: "<1000", l: "Less than 1000" },
+                  { v: "1000-10000", l: "1000 - 10000" },
+                  { v: "10000-20000", l: "10000 - 20000" },
+                  { v: ">20000", l: "More than 20000" },
+                ].map((o) => (
+                  <label key={o.v} className="flex items-center gap-2 text-sm cursor-pointer">
+                    <RadioGroupItem value={o.v} id={`area-${o.v}`} />
+                    <span>{o.l}</span>
+                  </label>
+                ))}
+              </RadioGroup>
             </div>
             <div>
               <Label htmlFor="message" className="text-sm font-semibold">Message (optional)</Label>
@@ -157,7 +175,7 @@ const LeadForm = ({
 
         <p className="flex items-center gap-2 text-xs text-muted-foreground justify-center">
           <CheckCircle2 className="h-3.5 w-3.5 text-success" />
-          We respond within 30 minutes • No spam
+          Industrial Projects Only • No Residential Services
         </p>
       </form>
     </div>
